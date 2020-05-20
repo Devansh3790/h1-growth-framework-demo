@@ -9,7 +9,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/database/Dockerfile
-    image: h1_demo_prod_database
+    image: devansh2290/h1-growth-framework-database
     env_file:
       - ./.envs/.production/.database
     volumes:
@@ -33,7 +33,7 @@ services:
     build: 
       context: .
       dockerfile: ./compose/nginx/Dockerfile
-    image: h1_demo_prod_nginx
+    image: devansh2290/h1-growth-framework-nginx
     depends_on:
       - backend
     volumes:
