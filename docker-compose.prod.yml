@@ -1,0 +1,47 @@
+ 
+version: '3'
+
+volumes:
+  database_mysql_data: {}
+
+services: 
+  database:
+    build:
+      context: .
+      dockerfile: ./compose/database/Dockerfile
+    image: h1_demo_prod_database
+    env_file:
+      - ./.envs/.production/.database
+    volumes:
+      - database_mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./compose/backend/Dockerfile
+    image: h1_demo_prod_backend
+    depends_on: 
+      - database
+    env_file: 
+      - ./.envs/.production/.backend
+      - ./.envs/.production/.database
+    volumes:
+      - ./backend:/app
+    command: /start
+
+  nginx:
+    build: 
+      context: .
+      dockerfile: ./compose/nginx/Dockerfile
+    image: h1_demo_prod_nginx
+    depends_on:
+      - backend
+      # - frontend
+    volumes:
+      - ./nginx/etc/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/etc/conf.d/nginx.production.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    env_file: 
+      - ./.envs/.production/.nginx
+    command: /start

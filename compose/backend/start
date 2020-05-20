@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+function manage_app() {
+    python manage.py migrate
+}
+
+function start_local() {
+    # use django runserver as local server here.
+    manage_app
+    python manage.py runserver 0.0.0.0:8000
+}
+
+function start_production() {
+    # use gunicorn for production server here
+    manage_app
+    gunicorn config.wsgi --bind 0.0.0.0:8000
+}
+
+if [ $ENVIRONMENT == 'local' ]; then
+    # use development server
+    start_local
+else
+    # use production server
+    start_production
+fi
