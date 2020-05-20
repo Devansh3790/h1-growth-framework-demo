@@ -12,3 +12,5 @@ COPY ./frontend/ /app
 RUN rm -rf /usr/share/nginx/html/*
 
 RUN cd /app && npm ci && npm run docker
+
+EXPOSE 80

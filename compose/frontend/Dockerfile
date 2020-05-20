@@ -24,3 +24,5 @@ RUN chown frontend /start
 
 # set working directory
 WORKDIR /app
+
+EXPOSE 4200

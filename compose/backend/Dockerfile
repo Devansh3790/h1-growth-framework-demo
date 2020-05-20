@@ -42,3 +42,5 @@ USER django
 WORKDIR /app
 
 ENTRYPOINT ["/entrypoint"]
+
+EXPOSE 8000
