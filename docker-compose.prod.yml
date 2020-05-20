@@ -19,7 +19,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/backend/Dockerfile
-    image: h1_demo_prod_backend
+    image: devansh2290/h1-growth-framework-backend
     depends_on: 
       - database
     env_file: 
@@ -36,7 +36,6 @@ services:
     image: h1_demo_prod_nginx
     depends_on:
       - backend
-      # - frontend
     volumes:
       - ./nginx/etc/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/etc/conf.d/nginx.production.conf:/etc/nginx/conf.d/default.conf
@@ -44,4 +43,4 @@ services:
       - "80:80"
     env_file: 
       - ./.envs/.production/.nginx
-    command: /start
+    command: ["nginx", "-g", "daemon off;"]

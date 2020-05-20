@@ -15,7 +15,7 @@ function start_local() {
 }
 
 function start_production() {
-    # use gunicorn for production server here
+    echo "use gunicorn for production server here"
     manage_app
     gunicorn config.wsgi --bind 0.0.0.0:8000
 }

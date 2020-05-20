@@ -2,6 +2,8 @@ from .base import *
 
 DEBUG = False
 
+print(SECRET_KEY)
+
 DATABASES= {
     "default": {
         "ENGINE": "django.db.backends.mysql",
