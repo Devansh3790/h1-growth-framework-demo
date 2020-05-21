@@ -5,6 +5,7 @@ set -o pipefail
 set -o nounset
 
 function manage_app() {
+    python manage.py collectstatic --noinput
     python manage.py migrate
 }
 
