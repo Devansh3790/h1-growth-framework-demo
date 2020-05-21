@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+// Import Custom Variables
+@import "variables";
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Import Custom SCSS
+@import "global";
+/* Importing Bootstrap SCSS file. */
+
