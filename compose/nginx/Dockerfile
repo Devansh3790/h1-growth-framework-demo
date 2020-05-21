@@ -1,18 +1,18 @@
 FROM nginx:1-alpine
 
-RUN apk update \
-  # nodejs 
-  && apk add nodejs npm
+# RUN apk update \
+#   # nodejs 
+#   && apk add nodejs npm
 
-WORKDIR /app
+# WORKDIR /app
 
-# Copy app files.
-COPY ./frontend/ /app
+# # Copy app files.
+# COPY ./frontend/ /app
 
-RUN rm -rf /usr/share/nginx/html/*
+# RUN rm -rf /usr/share/nginx/html/*
 
-RUN npm install -g @angular/cli
+# RUN npm install -g @angular/cli
 
-RUN cd /app && npm ci && npm run docker
+# RUN cd /app && npm ci && npm run docker
 
-EXPOSE 80
+# EXPOSE 80
