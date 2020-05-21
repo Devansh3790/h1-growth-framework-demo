@@ -1,6 +1,0 @@
-MYSQL_ROOT_PASSWORD=admin
-MYSQL_HOST=database
-MYSQL_DATABASE=growthframework_local_db
-MYSQL_USER=debug
-MYSQL_PASSWORD=debug
-MYSQL_PORT=3306

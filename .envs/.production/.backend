@@ -1,3 +1,0 @@
-ENVIRONMENT=production
-DJANGO_SECRET_KEY=m(e1xrnccr0gjrz6$e5%$9a_0o)9jjizl8ebma9-@tud&stbp%
-DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
