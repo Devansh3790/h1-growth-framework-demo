@@ -1,0 +1,6 @@
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_HOST=database
+MYSQL_DATABASE=growthframework_prod_db
+MYSQL_USER=prod
+MYSQL_PASSWORD=9jjizl8ebma9-@tud&stbp%
+MYSQL_PORT=3306
