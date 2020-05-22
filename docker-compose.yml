@@ -44,18 +44,3 @@ services:
     ports:
       - "4200:4200"
     command: /start
-
-  nginx:
-    build: 
-      context: .
-      dockerfile: ./compose/nginx/Dockerfile
-    image: h1_demo_prod_nginx
-    volumes:
-      - ./nginx/etc/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/etc/conf.d/nginx.local.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - "80:80"
-      - "81:81"
-    env_file: 
-      - ./.envs/.local/.nginx
-    command: ["nginx", "-g", "daemon off;"]

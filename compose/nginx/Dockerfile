@@ -25,6 +25,4 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY --from=compile-image /app/dist/frontend/ /usr/share/nginx/html
 
-COPY ./backend/static/ /opt/h1/static/
-
 EXPOSE 80

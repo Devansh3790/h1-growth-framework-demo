@@ -1,6 +1,5 @@
-MYSQL_ROOT_PASSWORD=admin
-MYSQL_HOST=database
-MYSQL_DATABASE=growthframework_prod_db
-MYSQL_USER=prod
+MYSQL_HOST=growth-framework.cl2frpomvl32.ap-south-1.rds.amazonaws.com
+MYSQL_DATABASE=growthframework_db
+MYSQL_USER=docker_compose
 MYSQL_PASSWORD=9jjizl8ebma9-@tud&stbp%
 MYSQL_PORT=3306
